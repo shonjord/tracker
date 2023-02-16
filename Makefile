@@ -51,11 +51,6 @@ migrate:
 	@printf "$(OK_COLOR)==> Migrating$(NO_COLOR)\n"
 	@docker-compose exec app ./docker/scripts/migrate.sh
 
-simulation:
-	@printf "$(OK_COLOR)==> Starting simulation$(NO_COLOR)\n"
-	@./docker/scripts/simulation.sh $(SRC)
-	@printf "$(OK_COLOR)==> Simulation finished successfully$(NO_COLOR)\n"
-
 test-unit:
 	@printf "$(OK_COLOR)==> Unit Testing$(NO_COLOR)\n"
 	@go test -v -mod=vendor ./internal/...
