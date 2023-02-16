@@ -2,7 +2,6 @@ help:
 	@echo "computer tracker"
 	@echo "----------------------------------------------------------------------------------------------------------"
 	@echo "List of available targets:"
-	@echo "  api-docs                       - generates Restful API documentation.                                   "
 	@echo "  container-up                   - spins up application docker-containers."
 	@echo "  container-down                 - kills application docker-containers."
 	@echo "  daemon                         - installs a go daemon (go mod OFF), for dev."
@@ -20,11 +19,6 @@ help:
 	dist \
 	install \
 	test-unit
-
-api-docs:
-	@printf "$(OK_COLOR)==> Generating API endpoints documentation$(NO_COLOR)\n"
-	${DOCKER_RAML} -o ${WEB_DIR}/api.html
-	@printf "$(OK_COLOR)==> Finished!$(NO_COLOR), API docs are available here: ${WEB_DIR}/api.html\n"
 
 container-up:
 	@printf "$(OK_COLOR)==> Spinning UP containers$(NO_COLOR)\n"
